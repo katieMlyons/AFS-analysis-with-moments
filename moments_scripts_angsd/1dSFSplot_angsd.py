@@ -15,8 +15,8 @@ infile=sys.argv[1]
 fs = moments.Spectrum.from_file(infile)
 nalleles=fs.S()
 print "N alleles: ",nalleles
-ns=data.sample_sizes
+ns=fs.sample_sizes
 np.set_printoptions(precision=3)     
 
-moments.Plotting.plot_1d_fs(data)
+moments.Plotting.plot_1d_fs(fs)
 plt.savefig('1dSFS_'+sys.argv[1]+'.pdf')
